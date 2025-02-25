@@ -14,6 +14,14 @@ const winPattren = [
   [3, 4, 5],
   [6, 7, 8],
 ];
+// Check for tie function
+const checkTie = () => {
+  for (let box of boxes) {
+    if (box.innerText === "") return false;
+  }
+  return true;
+};
+
 // reset btn
 let resetGame = () => {
   turnO = true;
@@ -49,6 +57,10 @@ const checkWinner = () => {
       if (pos1val === pos2val && pos2val === pos3val) {
         showWinner(pos1val);
         disableBtn();
+      } else if (checkTie()) {
+        setTimeout(() => {
+          resetGame();
+        }, 2000);
       }
     }
   }
