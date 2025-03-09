@@ -60,7 +60,7 @@ const checkWinner = () => {
       } else if (checkTie()) {
         setTimeout(() => {
           resetGame();
-        }, 2000);
+        }, 1000);
       }
     }
   }
